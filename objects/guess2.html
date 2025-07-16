@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+    }
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Guess the Number</h1>
+  <div class="container">
+    <input type="number" id="max" placeholder="Enter max number" />
+    <button onclick="startGame()">Start Game</button>
+
+    <div id="gameArea" style="display: none;">
+      <input type="number" id="guessInput" placeholder="Enter your guess" />
+      <button onclick="checkGuess()">Submit Guess</button>
+      <button onclick="quitGame()">Quit Game</button>
+      <div id="message"></div>
+    </div>
+  </div>
+
+  <script>
+    let randomNumber = null;
+    let isGameStarted = false;
+
+    function startGame() {
+      const max = parseInt(document.getElementById("max").value);
+      if (isNaN(max) || max <= 0) {
+        document.getElementById("message").innerText = "Please enter a valid positive number.";
+        return;
+      }
+      randomNumber = Math.floor(Math.random() * max) + 1;
+      isGameStarted = true;
+      document.getElementById("gameArea").style.display = "block";
+      document.getElementById("message").innerText = "Game started! Guess a number.";
+    }
+
+    function checkGuess() {
+      if (!isGameStarted) return;
+
+      const guess = parseInt(document.getElementById("guessInput").value);
+      if (isNaN(guess)) {
+        document.getElementById("message").innerText = "Please enter a valid number.";
+        return;
+      }
+
+      if (guess === randomNumber) {
+        document.getElementById("message").innerText = `🎉 Correct! The number was ${randomNumber}.`;
+        isGameStarted = false;
+      } else if (guess < randomNumber) {
+        document.getElementById("message").innerText = "Too low! Try again.";
+      } else {
+        document.getElementById("message").innerText = "Too high! Try again.";
+      }
+    }
+
+    function quitGame() {
+      if (isGameStarted) {
+        document.getElementById("message").innerText = "Game quit. Refresh to play again.";
+        isGameStarted = false;
+        document.getElementById("gameArea").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

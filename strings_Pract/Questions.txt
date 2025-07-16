@@ -1,0 +1,55 @@
+1. write a program to print a string.
+2. print the length of the string
+3. use the slice method
+4. concat two string
+5. check the word "hello" is in the string or not also check it start with "hello"
+6. convert the string to upperCase, loverCase, capital case
+7. create a one string and use all string methods on it. (charAt, slice, join, split, reverse, replace, replaceAll).
+8. Write a program to print the count the number of letters in string(use split).
+9.  write a program to count the number of vowels.
+10. write a program to remove all digits from strings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
