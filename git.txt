@@ -1,0 +1,7 @@
+learning github
+1.git init //to initialize empty git repo 
+2.git add .// to adding all code in github
+3.git commit -m "message related to the changes" //message  adding change to the github 
+4. git branch -M main // master branch se main  branch me set kiya
+5. git remote add origin (paste here link the copy fron repo)
+6.git push -u origin main //changes  krta hai main branch 
