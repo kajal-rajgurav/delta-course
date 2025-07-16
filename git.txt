@@ -5,3 +5,5 @@ learning github
 4. git branch -M main // master branch se main  branch me set kiya
 5. git remote add origin (paste here link the copy fron repo)
 6.git push -u origin main //changes  krta hai main branch 
+7.git branch name //new bramch created
+8.git checkout branch_name
